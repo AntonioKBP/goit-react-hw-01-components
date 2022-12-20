@@ -17,7 +17,7 @@ export const UserCard = ({ username, tag, location, avatar, stats }) => {
       <Description>
         <ProfileImg src={avatar} alt="User avatar" class="avatar" />
         <ProfileName>{username}</ProfileName>
-        <ProfileTag>{tag}</ProfileTag>
+        <ProfileTag>@{tag}</ProfileTag>
         <ProfileLocation>{location}</ProfileLocation>
       </Description>
 
