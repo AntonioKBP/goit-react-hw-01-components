@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   Profile,
   Description,
@@ -11,11 +13,19 @@ import {
   StatsItemQty,
 } from 'components/UserCard/UserCard.styled';
 
-export const UserCard = ({ username, tag, location, avatar, stats }) => {
+export const UserCard = ({
+  username,
+  tag,
+  location,
+  avatar,
+  followers,
+  views,
+  likes,
+}) => {
   return (
     <Profile>
       <Description>
-        <ProfileImg src={avatar} alt="User avatar" class="avatar" />
+        <ProfileImg src={avatar} alt="User avatar" />
         <ProfileName>{username}</ProfileName>
         <ProfileTag>@{tag}</ProfileTag>
         <ProfileLocation>{location}</ProfileLocation>
@@ -24,19 +34,29 @@ export const UserCard = ({ username, tag, location, avatar, stats }) => {
       <StatsList>
         <StatsItem>
           <StatsItemLabel>Followers</StatsItemLabel>
-          <StatsItemQty>{stats.followers}</StatsItemQty>
+          <StatsItemQty>{followers}</StatsItemQty>
         </StatsItem>
         <StatsItem>
           <StatsItemLabel>Views</StatsItemLabel>
-          <StatsItemQty>{stats.views}</StatsItemQty>
+          <StatsItemQty>{views}</StatsItemQty>
         </StatsItem>
         <StatsItem>
           <StatsItemLabel>Likes</StatsItemLabel>
-          <StatsItemQty>{stats.likes}</StatsItemQty>
+          <StatsItemQty>{likes}</StatsItemQty>
         </StatsItem>
       </StatsList>
     </Profile>
   );
+};
+
+UserCard.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 };
 
 // {

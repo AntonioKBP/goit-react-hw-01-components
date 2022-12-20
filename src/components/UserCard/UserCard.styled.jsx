@@ -4,6 +4,7 @@ export const Profile = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-bottom: 20px;
   width: 300px;
   height: 300px
   background-color: antiquewhite;
@@ -42,6 +43,9 @@ export const ProfileLocation = styled.p`
 
 export const StatsList = styled.ul`
   list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
 `;
 export const StatsItem = styled.li`
   display: flex;
