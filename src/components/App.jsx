@@ -1,8 +1,11 @@
 import { UserCard } from 'components/UserCard/UserCard';
 import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 import user from 'components/my-data/user.json';
 import data from 'components/my-data/data.json';
+import friends from 'components/my-data/friends.json';
 
 export const App = () => {
   return (
@@ -17,6 +20,8 @@ export const App = () => {
         likes={user.stats.likes}
       />
       <Statistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory />
     </>
   );
 };
