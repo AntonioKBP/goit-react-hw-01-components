@@ -4,6 +4,12 @@ export const Section = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
+  width: 400px;
+  margin: 0 auto;
+  background-color: azure;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -20,6 +26,10 @@ export const SectionItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: antiquewhite;
 `;
 
 export const ItemLabel = styled.span``;

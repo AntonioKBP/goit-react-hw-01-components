@@ -4,6 +4,7 @@ export const Profile = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+      margin-top: 10px;
   margin-bottom: 20px;
   width: 300px;
   height: 300px

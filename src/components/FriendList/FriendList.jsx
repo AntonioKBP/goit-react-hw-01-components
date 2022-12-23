@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import { FcApproval, FcHighPriority } from 'react-icons/fc';
+
 import {
   UnorderedList,
   ListItem,
@@ -13,7 +15,19 @@ export function FriendList({ friends }) {
     <UnorderedList>
       {friends.map(({ avatar, name, isOnline, id }) => (
         <ListItem key={id}>
-          <ItemSpan>{isOnline}</ItemSpan>
+          <ItemSpan>
+            {isOnline ? (
+              <span>
+                <FcApproval />
+                Online
+              </span>
+            ) : (
+              <span>
+                <FcHighPriority />
+                Offline
+              </span>
+            )}
+          </ItemSpan>
           <ItemImage src={avatar} alt={name} />
           <ItemName>{name}</ItemName>
         </ListItem>
