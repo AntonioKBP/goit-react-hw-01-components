@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {
   UnorderedList,
@@ -8,28 +8,45 @@ import {
   ItemName,
 } from './FriendList.styled';
 
-export const FriendList = friends => {
+export function FriendList({ friends }) {
   return (
     <UnorderedList>
-      <ListItem>
-        <ItemSpan></ItemSpan>
-        <ItemImage />
-        <ItemName>Test text</ItemName>
-      </ListItem>
+      {friends.map(({ avatar, name, isOnline, id }) => (
+        <ListItem key={id}>
+          <ItemSpan>{isOnline}</ItemSpan>
+          <ItemImage src={avatar} alt={name} />
+          <ItemName>{name}</ItemName>
+        </ListItem>
+      ))}
     </UnorderedList>
   );
+}
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
 };
 
-// export const FriendList = friends => {
-//   return (
-//     <UnorderedList>
-//       {friends.map(({ avatar, name, isOnline, id }) => (
-//         <ListItem key={id}>
-//           <ItemSpan>{isOnline}</ItemSpan>
-//           <ItemImage src={avatar} alt={name} />
-//           <ItemName>{name}</ItemName>
-//         </ListItem>
-//       ))}
-//     </UnorderedList>
-//   );
+// {
+//     "avatar": "https://cdn-icons-png.flaticon.com/512/1998/1998749.png",
+//     "name": "Poly",
+//     "isOnline": false,
+//     "id": 1284
+//   }
+
+// Statistics.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   stats: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//       label: PropTypes.string.isRequired,
+//       percentage: PropTypes.number.isRequired,
+//     })
+//   ),
 // };

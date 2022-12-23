@@ -9,7 +9,7 @@ import {
   ItemPercentage,
 } from './Statistics.styled';
 
-export const Statistics = ({ title, stats }) => {
+export function Statistics({ title, stats }) {
   return (
     <Section>
       {title && <SectionTitle>{title}</SectionTitle>}
@@ -23,7 +23,7 @@ export const Statistics = ({ title, stats }) => {
       </SectionList>
     </Section>
   );
-};
+}
 
 Statistics.propTypes = {
   title: PropTypes.string.isRequired,
@@ -35,11 +35,6 @@ Statistics.propTypes = {
     })
   ),
 };
-// Statistics.propTypes = {
-//   id: PropTypes.string,
-//   label: PropTypes.string.isRequired,
-//   percentage: PropTypes.number.isRequired,
-// };
 
 // [
 //   { id: 'id-1', label: '.docx', percentage: 22 },
