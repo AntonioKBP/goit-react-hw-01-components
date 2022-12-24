@@ -16,14 +16,16 @@ export const TableRow = styled.tr`
 `;
 export const TableHeader = styled.th`
   border: 2px solid;
-  padding: 4px;
-  font-weight: 400;
+  padding: ${p => p.theme.space[2]}px;
+  font-weight: ${p => p.theme.fontWeights.bold};
   background-color: grey;
 `;
 export const TableBody = styled.tbody``;
 export const TableData = styled.td`
-  font-weight: 500;
-  padding: 4px;
+  font-weight: ${p => p.theme.fontWeights.normal};
+  padding: ${p => p.theme.space[2]}px;
   outline: 1px solid black;
   text-align: center;
 `;
+
+// ${p => p.theme.colors.backgroundColor}

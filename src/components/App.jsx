@@ -8,9 +8,11 @@ import data from 'components/my-data/data.json';
 import friends from 'components/my-data/friends.json';
 import transactions from 'components/my-data/transactions.json';
 
+import Box from 'components/Box/Box';
+
 export const App = () => {
   return (
-    <>
+    <Box bg="#f9f6f6">
       <UserCard
         username={user.username}
         tag={user.tag}
@@ -23,6 +25,6 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </>
+    </Box>
   );
 };
