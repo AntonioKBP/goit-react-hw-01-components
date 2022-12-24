@@ -6,6 +6,7 @@ export const Section = styled.div`
   padding: 15px;
   width: 400px;
   margin: 0 auto;
+  margin-bottom: 20px;
   background-color: azure;
   border-radius: 4px;
   margin-bottom: 25px;

@@ -9,7 +9,7 @@ import {
   TableData,
 } from './TransactionHistory.styled';
 
-export function TransactionHistory({ transactions }) {
+export function TransactionHistory({ items }) {
   return (
     <TransactionTable>
       <TableHead>
@@ -21,7 +21,7 @@ export function TransactionHistory({ transactions }) {
       </TableHead>
 
       <TableBody>
-        {transactions.map(({ id, type, amount, currency }) => (
+        {items.map(({ id, type, amount, currency }) => (
           <TableRow key={id}>
             <TableData>{type}</TableData>
             <TableData>{amount}</TableData>

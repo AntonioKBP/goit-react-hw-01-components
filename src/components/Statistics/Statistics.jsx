@@ -9,13 +9,19 @@ import {
   ItemPercentage,
 } from './Statistics.styled';
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
 export function Statistics({ title, stats }) {
   return (
     <Section>
       {title && <SectionTitle>{title}</SectionTitle>}
       <SectionList>
         {stats.map(({ id, label, percentage }) => (
-          <SectionItem key={id}>
+          <SectionItem key={id} backgroundColor={getRandomHexColor()}>
             <ItemLabel>{label}</ItemLabel>
             <ItemPercentage>{percentage}%</ItemPercentage>
           </SectionItem>
